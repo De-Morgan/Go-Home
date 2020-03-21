@@ -6,6 +6,7 @@ class LocationService {
   factory LocationService() => _instance;
   static final Location _location = Location();
 
+  ///Static function to check location service
   static Future<void> locationServiceStatus() async {
     bool _serviceEnabled = await _location.serviceEnabled();
     if (!_serviceEnabled) {
@@ -16,6 +17,7 @@ class LocationService {
     }
   }
 
+  ///Static function to request location permission
   static Future<void> permissionStatus() async {
     PermissionStatus _permissionGranted = await _location.hasPermission();
     if (_permissionGranted == PermissionStatus.DENIED) {
@@ -26,10 +28,12 @@ class LocationService {
     }
   }
 
+  ///Static function to get location data
   static Future<LocationData> getCurrentLocation() async {
     await locationServiceStatus();
     await permissionStatus();
     final locationData = await _location.getLocation();
+    assert(locationData != null);
     return locationData;
   }
 }
