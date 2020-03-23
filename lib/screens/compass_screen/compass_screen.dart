@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'widget/compass.dart';
 import 'widget/get_direction_button.dart';
 import 'widget/go_home_text.dart';
 import 'widget/popup_menu.dart';
@@ -26,7 +27,7 @@ class CompassScreen extends StatelessWidget {
               Spacer(
                 flex: 3,
               ),
-              //  Compass(),
+              Compass(),
               Spacer(
                 flex: 6,
               ),

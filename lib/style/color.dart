@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-const primaryColor = const Color(0xFF000000);
-const secondaryColor = primaryColor;
+const primaryColor = const Color(0xff000116);
+const secondaryColor = const Color(0xffffffff);
 final scaffoldBackgroundColor = primaryColor;
 final cardColor = scaffoldBackgroundColor;
 final backgroundColor = scaffoldBackgroundColor;

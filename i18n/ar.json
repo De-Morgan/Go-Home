@@ -1,0 +1,17 @@
+
+{
+  "appName":"اذهب للمنزل",
+  "home": "الصفحة الرئيسية",
+  "unableToLaunchGoogleMap": "تعذر تشغيل خريطة جوجل",
+  "getDirection": "احصل على اتجاه",
+  "changeHomeLocation": "تغيير موقع المنزل",
+  "change": "يتغيرون",
+  "cancel": "إلغاء",
+  "changeHome": "تغيير الصفحة الرئيسية",
+  "setHomeLocationWelcomePage": "تعيين موقع المنزل",
+  "areYouSureYouWantToChangeHomeLocation": "هل أنت متأكد أنك تريد تغيير موقع المنزل؟",
+  "setHomeLocation": "تعيين الموقع الحالي كموطن",
+  "firstlyYouNeedToSetYourHome": "أولاً ، تحتاج إلى تعيين موقعك أثناء وجودك في المنزل.",
+  "getHomeDirection": "احصل على اتجاه المنزل",
+  "WithYourHomeLocationSet": "مع تعيين موقع منزلك ، يمكننا دائمًا توجيهك إلى المنزل من أي مكان في العالم حتى بدون اتصال بالإنترنت."
+}
