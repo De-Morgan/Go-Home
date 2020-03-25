@@ -9,6 +9,7 @@ class CompassScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: Key("CompassScreen"),
       appBar: AppBar(
         title: GoHomeText(),
         elevation: 0,

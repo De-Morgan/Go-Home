@@ -1,0 +1,18 @@
+{
+  "appName":"Rentrer chez soi",
+  "home": "Accueil",
+  "getDirection": "Obtenir la direction",
+  "changeHomeLocation": "Changer le domicile",
+  "change": "Changement",
+  "cancel": "Annuler",
+  "areYouSureYouWantToChangeHomeLocation": "Voulez-vous vraiment modifier la position d'origine?",
+  "unableToLaunchGoogleMap": "Impossible de lancer Google map",
+  "changeHome": "Changer de maison",
+  "setHomeLocationWelcomePage": "Définir la position d'origine",
+  "setHomeLocation": "Définir l'emplacement actuel comme domicile",
+  "firstlyYouNeedToSetYourHome": "Tout d'abord, vous devez définir votre emplacement lorsque vous êtes à la maison.",
+  "getHomeDirection": "Obtenez la direction de la maison",
+  "WithYourHomeLocationSet": "Avec votre position d'origine définie, nous pouvons toujours vous diriger vers n'importe où dans le monde, même sans connexion Internet."
+
+
+}

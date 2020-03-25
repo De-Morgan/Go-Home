@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/home_direction_bloc.dart';
 import '../../locale/app_localization.dart';
+import 'widget/set_home_bottom_sheet.dart';
 import 'widget/welcome_page_item.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -55,12 +56,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[
                     WelcomePageItem(
+                        key: Key("setHomeLocationWelcomePage"),
                         title:
                             "${localizedText(context, "setHomeLocationWelcomePage")}",
                         description:
                             "${localizedText(context, "firstlyYouNeedToSetYourHome")}",
                         imageLocation: "assets/images/home_image.png"),
                     WelcomePageItem(
+                        key: Key("getHomeDirection"),
                         title: "${localizedText(context, "getHomeDirection")}",
                         description:
                             "${localizedText(context, "WithYourHomeLocationSet")}",
@@ -87,23 +90,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           ),
         ),
       ),
-      bottomSheet: _currentPage == _numPages - 1
-          ? Container(
-              height: 80.0,
-              width: double.infinity,
-              child: FlatButton(
-                onPressed: () => BlocProvider.of<HomeDirectionBloc>(context)
-                    .add(HomeDirectionSetEvent()),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 16, horizontal: 4),
-                  child: Text(
-                    localizedText(context, 'setHomeLocation'),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ))
-          : Text(''),
+      bottomSheet:
+          _currentPage == _numPages - 1 ? SetHomeBottomSheet() : Text(''),
     );
   }
 }

@@ -1,0 +1,17 @@
+
+{
+  "appName":"Go Home",
+  "home": "Home",
+  "unableToLaunchGoogleMap": "Unable to launch Google map",
+  "getDirection": "Get Direction",
+  "changeHomeLocation": "Change Home Location",
+  "change": "Change",
+  "cancel": "Cancel",
+  "changeHome": "Change Home",
+  "setHomeLocationWelcomePage": "Set Home Location",
+  "areYouSureYouWantToChangeHomeLocation": "Are you sure you want to Change home location?",
+  "setHomeLocation": "Set Current Location As Home",
+  "firstlyYouNeedToSetYourHome": "Firstly, you need to set your location while you are at home.",
+  "getHomeDirection": "Get Direction Home",
+  "WithYourHomeLocationSet": "With your home location set, we can always point you home from anywhere in the world even without internet connection."
+}

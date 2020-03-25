@@ -1,0 +1,21 @@
+
+
+{
+  "appName":"换家",
+  "home": "家",
+  "unableToLaunchGoogleMap": "无法启动Google地图",
+  "getDirection": "得到指引",
+  "changeHomeLocation": "变更住家位置",
+  "change": "更改",
+  "cancel": "取消",
+  "changeHome": "换家",
+  "setHomeLocationWelcomePage": "设置家庭位置",
+  "areYouSureYouWantToChangeHomeLocation": "您确定要更改家庭位置吗？",
+  "setHomeLocation": "将当前位置设为首页",
+  "firstlyYouNeedToSetYourHome": "首先，您需要在家中设置位置.",
+  "getHomeDirection": "获取方向回家",
+  "WithYourHomeLocationSet": "设置好您的住所位置后，即使没有Internet连接，我们也始终可以将您带到世界任何地方。"
+
+
+
+}

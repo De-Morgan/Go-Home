@@ -15,7 +15,7 @@ ThemeData _buildDarkTheme() {
     cardColor: cardColor,
     primaryColorLight: secondaryColor,
     buttonColor: primaryColor,
-    indicatorColor: Colors.white,
+    indicatorColor: secondaryColor,
     toggleableActiveColor: secondaryColor,
     accentColor: secondaryColor,
     dialogTheme: DialogTheme(

@@ -11,6 +11,7 @@ import 'package:gohome/services/location_service.dart';
 import 'package:location/location.dart';
 
 import '../../../bloc/home_direction_bloc.dart';
+import 'circular_progress.dart';
 import 'compass_clipper.dart';
 
 class Compass extends StatefulWidget {
@@ -19,17 +20,18 @@ class Compass extends StatefulWidget {
 }
 
 class _CompassState extends State<Compass> with AfterLayoutMixin<Compass> {
+  /// recalibrate the compass image used
   final imageAngle = pi / 4;
+
   LocationData get homeLocationData =>
       (BlocProvider.of<HomeDirectionBloc>(context).state
               as HomeDirectionSetState)
           .locationData;
+
   get homeOffset =>
       Offset(homeLocationData.latitude, homeLocationData.longitude);
-  LocationData currentLocation;
-  Completer<Tangent> tangent = Completer();
 
-  //Todo check if defition by pi / 2 is necessary
+  Completer<Tangent> tangent = Completer();
 
   @override
   Widget build(BuildContext context) {
@@ -47,15 +49,11 @@ class _CompassState extends State<Compass> with AfterLayoutMixin<Compass> {
                     return Text('Error reading heading: ${snapshot.error}');
                   }
                   if (!snapshot.hasData) {
-                    return Container(
-                      alignment: FractionalOffset.center,
-                      child: CircularProgressIndicator(),
-                    );
+                    return CircularProgress();
                   }
+
                   double direction = snapshot.data;
 
-                  // if direction is null, then device does not support this sensor
-                  // show error message
                   if (direction == null)
                     return Center(
                       child: Text("Device does not have sensors !"),
@@ -66,10 +64,7 @@ class _CompassState extends State<Compass> with AfterLayoutMixin<Compass> {
                       future: tangent.future,
                       builder: (context, AsyncSnapshot<Tangent> snapshot) {
                         if (!snapshot.hasData) {
-                          return Container(
-                            alignment: FractionalOffset.center,
-                            child: CircularProgressIndicator(),
-                          );
+                          return CircularProgress();
                         }
 
                         double tangentAngle = (snapshot.data?.angle ?? pi / 2);
@@ -79,9 +74,6 @@ class _CompassState extends State<Compass> with AfterLayoutMixin<Compass> {
                           child: ClipPath(
                             clipper: CompassClipper(),
                             child: Container(
-                              child: CustomPaint(
-                                  //  painter: CompassCustomPainter(),
-                                  ),
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 image: DecorationImage(
@@ -101,13 +93,16 @@ class _CompassState extends State<Compass> with AfterLayoutMixin<Compass> {
 
   @override
   void afterFirstLayout(BuildContext context) async {
+    calculateTangentAngle();
+  }
+
+  void calculateTangentAngle() async {
     try {
-      LocationData locationData = await LocationService.getCurrentLocation();
+      LocationData locationData = await LocationService().getCurrentLocation();
       final myOffset = Offset(locationData.latitude, locationData.longitude);
       Tangent tangentResult = Tangent(Offset.zero, homeOffset - myOffset);
       tangent.complete(tangentResult);
     } on PlatformException catch (_) {
-      //Todo finalise your plan here
       /// Open settings if user denials permission
       /* PermissionHandler().openAppSettings().then((opened) {
         //
