@@ -36,5 +36,4 @@ main() {
     expect(setHomeLocationWidget, findsOneWidget);
     expect(getDirectionWidget, findsNothing);
   });
-
 }

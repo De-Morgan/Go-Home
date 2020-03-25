@@ -67,8 +67,7 @@ TextTheme _buildTextTheme(TextTheme base) {
           fontSize: 16.0,
         ),
       )
-      //Todo add font
       .apply(
-        fontFamily: 'SourceSerifPro',
+        fontFamily: 'Lora',
       );
 }
